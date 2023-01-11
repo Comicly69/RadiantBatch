@@ -1,0 +1,84 @@
+set /p response=
+
+  if %response% == Y (
+    goto yes
+) else if %response% == N (
+    goto no
+) else (
+    echo Invalid response.
+)
+
+:yes
+echo Okay, the dog will be named %dogname%
+
+:no
+echo Okay, the dog will not be named!
+
+
+  echo Should the dog be named %dogname%? Y for Yes N for No
+
+    echo  0 = Black       
+  echo  [34m1 = Blue[0m
+  echo [31m2 = Green[0m 
+  echo  3 = Aqua
+  echo  4 = Red
+  echo  5 = Purple
+  echo  6 = Yellow
+  echo  7 = White
+  echo  8 = Gray
+  echo  9 = Light Blue
+  echo  A = Light Green
+  echo  B = Light Aqua
+  echo  C = Light Red
+  echo  D = Light Purple
+  echo  E = Light Yellow
+  echo  F = Bright White
+
+
+echo  [34m1 = Blue[0m
+echo  [31m2 = Green[0m 
+echo  [32m3 = Aqua[0m
+echo  [33m4 = Yellow[0m
+echo  [34m5 = Blue[0m
+echo  [35m6 = Magenta[0m
+echo  [36m7 = Cyan[0m
+echo  [37m8 = White[0m
+
+
+echo    -t             Ping the specified host until stopped.
+echo                   To see statistics and continue - type Control-Break;
+echo                   To stop - type Control-C.
+echo    -a             Resolve addresses to hostnames.
+echo    -n count       Number of echo requests to send.
+echo    -l size        Send buffer size.
+echo    -f             Set Don't Fragment flag in packet (IPv4-only).
+echo    -i TTL         Time To Live.
+echo    -v TOS         Type Of Service (IPv4-only. This setting has been deprecated
+echo                   and has no effect on the type of service field in the IP
+echo                   Header).
+echo    -r count       Record route for count hops (IPv4-only).
+echo    -s count       Timestamp for count hops (IPv4-only).
+echo    -j host-list   Loose source route along host-list (IPv4-only).
+echo    -k host-list   Strict source route along host-list (IPv4-only).
+echo    -w timeout     Timeout in milliseconds to wait for each reply.
+echo    -R             Use routing header to test reverse route also (IPv6-only).
+echo                   Per RFC 5095 the use of this routing header has been
+echo                   deprecated. Some systems may drop echo requests if
+echo                   this header is used.
+echo    -S srcaddr     Source address to use.
+echo    -c compartment Routing compartment identifier.
+echo    -p             Ping a Hyper-V Network Virtualization provider address.
+echo    -4             Force using IPv4.
+echo    -6             Force using IPv6.
+
+if "%command%" == "read"(
+  echo What is the directory of the file would you like Radiant to read & adress? Please provide path of directory to file
+  set /p filedirectory=
+  echo What is the name of the file you would like radiant to read & adress
+  set /p filename=
+  echo Okay reading and adressing file %filename%
+  cd %filedirectory%
+  start %filename%
+  echo Reading & Adressing %filename%
+  goto begin
+)
