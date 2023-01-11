@@ -134,5 +134,25 @@ if "%command%" == "github" (
   start chrome "github.com"
   goto begin
 )
+
+if "%command%" == "repeat"(
+  echo What would you like Radiant repeat?
+  set /p echorepeat=
+  echo %echorepeat%
+)
+
+if "%command%" == "options"(
+  echo What option would you like to change?
+  timeout 3
+  echo Available options are:
+  echo  -v  Version               Change version of Radiant CLI. Type "v" or "version" for more info on versions
+  echo  -b  Default browswer      Change the default broswer Radiant uses for various browser related 
+  echo                            commands or logging. Type "broswer" for more info on default broswers
+  echo  -c  Default color         Change default color of radiant on launch.
+  echo  -t  Default title         Change Default title of radiant.
+  echo  -d  Dev mode              Enable dev mode by default. Type "Dev" for more info on dev mode
+  echo  -o  Online/offline mode   Enable/Disable offline or online mode. Type "o/o"  for more info on online
+  echo                            or offline modes
+)
 echo Invalid command. If you think this is an error, please contact the administration team.
 goto begin
