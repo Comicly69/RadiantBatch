@@ -1,7 +1,8 @@
 @echo off
 start logger.bat
 color a
-title Radiant 
+title Radiant
+set session=%date%|%username%%random%
 :begin
 echo Welcome to Radiant
 echo.
@@ -153,6 +154,18 @@ if "%command%" == "options"(
   echo  -d  Dev mode              Enable dev mode by default. Type "Dev" for more info on dev mode
   echo  -o  Online/offline mode   Enable/Disable offline or online mode. Type "o/o"  for more info on online
   echo                            or offline modes
+  set /p optionreq=
+  echo Error Incomplete syntax
+  :goto begin
 )
+
+if "%command%" == "browser"(
+echo Warning, this will only change the default broswer for this session
+echo What would you like the default browser to be changed to?
+set /p browserdefault=
+echo setting %browserdefault% to default broswer for %session%
+
+)
+
 echo Invalid command. If you think this is an error, please contact the administration team.
 goto begin
